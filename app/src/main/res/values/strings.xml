@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Niusasa</string>
+    <string name="title_activity_on_boarding_screen">OnBoardingScreen</string>
 </resources>
