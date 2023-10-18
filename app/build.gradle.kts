@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id ("com.google.dagger.hilt.android")
 
 }
 
@@ -42,7 +43,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.4.7"
     }
     packaging {
         resources {
@@ -78,6 +79,7 @@ dependencies {
 
     //Dagger Hilt
     implementation ("com.google.dagger:hilt-android:2.45")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
     kapt ("com.google.dagger:hilt-compiler:2.45")
 
     //Retrofit
