@@ -3,9 +3,9 @@ package com.codezila.newsapp.di
 import android.app.Application
 import com.codezila.newsapp.data.manager.LocalUserManagerImpl
 import com.codezila.newsapp.domain.manager.LocalUserManager
-import com.codezila.newsapp.domain.usecase.AppEntryUseCases
-import com.codezila.newsapp.domain.usecase.ReadAppEntry
-import com.codezila.newsapp.domain.usecase.SaveAppEntry
+import com.codezila.newsapp.domain.usecase.AppEntry.AppEntryUseCases
+import com.codezila.newsapp.domain.usecase.AppEntry.ReadAppEntry
+import com.codezila.newsapp.domain.usecase.AppEntry.SaveAppEntry
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.codezila.newsapp.domain.usecase
+package com.codezila.newsapp.domain.usecase.AppEntry
 
 import com.codezila.newsapp.domain.manager.LocalUserManager
 
