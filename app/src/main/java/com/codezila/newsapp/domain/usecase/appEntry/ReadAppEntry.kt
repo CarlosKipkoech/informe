@@ -1,4 +1,4 @@
-package com.codezila.newsapp.domain.usecase.AppEntry
+package com.codezila.newsapp.domain.usecase.appEntry
 
 import com.codezila.newsapp.domain.manager.LocalUserManager
 import kotlinx.coroutines.flow.Flow

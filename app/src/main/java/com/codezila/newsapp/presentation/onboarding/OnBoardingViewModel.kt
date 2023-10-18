@@ -2,7 +2,7 @@ package com.codezila.newsapp.presentation.onboarding
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.codezila.newsapp.domain.usecase.AppEntry.AppEntryUseCases
+import com.codezila.newsapp.domain.usecase.appEntry.AppEntryUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -17,6 +17,8 @@ class OnBoardingViewModel @Inject constructor(
             is OnBoardingEvent.SaveAppEntry -> {
                 saveAppEntry()
             }
+
+            else -> {}
         }
     }
 
