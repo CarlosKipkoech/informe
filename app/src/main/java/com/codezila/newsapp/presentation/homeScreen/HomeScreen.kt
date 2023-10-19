@@ -52,12 +52,11 @@ fun HomeScreen(articles: LazyPagingItems<Article>, navigate:(String)->Unit) {
             .statusBarsPadding()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.logo),
+            painter = painterResource(id = R.drawable.homelogo),
             contentDescription = null,
             modifier = Modifier
-                .width(150.dp)
+                .width(100.dp)
                 .height(30.dp)
-                .padding(horizontal = MediumPadding1)
         )
 
         Spacer(modifier = Modifier.height(MediumPadding1))
