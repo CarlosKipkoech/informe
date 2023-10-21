@@ -7,5 +7,6 @@ import com.codezila.newsapp.domain.model.Article
 interface NewsRepository {
 
     fun  getNews(sources:List<String>) : Flow<PagingData<Article>>
+    fun  searchNews(searchQuery:String,sources:List<String>) : Flow<PagingData<Article>>
 
 }

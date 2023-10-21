@@ -11,6 +11,7 @@ import com.codezila.newsapp.domain.usecase.appEntry.ReadAppEntry
 import com.codezila.newsapp.domain.usecase.appEntry.SaveAppEntry
 import com.codezila.newsapp.domain.usecase.getNews.GetNews
 import com.codezila.newsapp.domain.usecase.getNews.NewsUseCases
+import com.codezila.newsapp.domain.usecase.getNews.SearchNews
 import com.codezila.newsapp.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -60,7 +61,8 @@ object AppModule {
         newsRepository: NewsRepository
     ): NewsUseCases {
         return NewsUseCases(
-            getNews = GetNews(newsRepository)
+            getNews = GetNews(newsRepository),
+            searchNews = SearchNews(newsRepository)
         )
     }
 

@@ -31,15 +31,19 @@ import com.codezila.newsapp.presentation.navgraph.Route
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun HomeScreen(articles: LazyPagingItems<Article>, navigate:(String)->Unit) {
+fun HomeScreen(
+    articles: LazyPagingItems<Article>,
+    navigateToSearch: () -> Unit,
+    navigateToDetails: (Article) -> Unit
+) {
 
-    val  titles by remember {
+    val titles by remember {
         derivedStateOf {
-            if (articles.itemCount > 10){
+            if (articles.itemCount > 10) {
                 articles.itemSnapshotList.items
                     .slice(IntRange(start = 0, endInclusive = 9))
-                    .joinToString(separator = " \uD83d\uDFE5 "){ it.title }
-            } else{
+                    .joinToString(separator = " \uD83D\uDFE5 ") { it.title }
+            } else {
                 ""
             }
         }
@@ -52,11 +56,12 @@ fun HomeScreen(articles: LazyPagingItems<Article>, navigate:(String)->Unit) {
             .statusBarsPadding()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.homelogo),
+            painter = painterResource(id = R.drawable.logo),
             contentDescription = null,
             modifier = Modifier
-                .width(100.dp)
+                .width(150.dp)
                 .height(30.dp)
+                .padding(horizontal = MediumPadding1)
         )
 
         Spacer(modifier = Modifier.height(MediumPadding1))
@@ -69,9 +74,7 @@ fun HomeScreen(articles: LazyPagingItems<Article>, navigate:(String)->Unit) {
             readOnly = true,
             onValueChange = {},
             onSearch = {},
-            onClick = {
-                navigate(Route.SearchScreen.route)
-            }
+            onClick = navigateToSearch
         )
 
         Spacer(modifier = Modifier.height(MediumPadding1))
@@ -89,9 +92,7 @@ fun HomeScreen(articles: LazyPagingItems<Article>, navigate:(String)->Unit) {
         ArticlesList(
             modifier = Modifier.padding(horizontal = MediumPadding1),
             articles = articles,
-            onClick = {
-                navigate(Route.DetailsScreen.route)
-            }
+            onClick = navigateToDetails
         )
     }
 }
